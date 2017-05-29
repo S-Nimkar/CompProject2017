@@ -152,10 +152,10 @@ $number_of_comments = mysqli_num_rows($CommentsDataSet);
       </div>
       <hr>
       <div class="row comment-margin">
-        <div class="col l3 s12">
+        <div class="col l4 s12">
           <div class="card blue white-text comment-margin darken-1">
             <div class="card-content">
-              <p style="font-size: 2rem;">Comments:</p>
+              <p style="font-size: 2rem;"><i class="material-icons">forum</i> &nbspComments:</p>
             </div>
           </div>
         </div>

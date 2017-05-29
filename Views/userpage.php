@@ -71,7 +71,7 @@ $_SESSION['account_id'] = $userid;
 	        <div class="col s12 center-align">
 	          <div class="card blue-grey comment-margin">
 	            <div class="card-content white-text">
-	            	<a href="create_review.php" class="waves-effect waves-light blue-grey darken-3 offset-l4 btn-large"><i class="material-icons left">open_in_browser</i>Create New Review</a>
+	            	<a href="create_review.php" class="waves-effect waves-light blue-grey darken-3 btn-large"><i class="material-icons left">open_in_browser</i>Create New Review</a>
 	            </div>
 	          </div>
 	        </div>
@@ -115,6 +115,7 @@ $_SESSION['account_id'] = $userid;
 			              	echo "No Score";
 			              } else echo "$rating"; 
 			              echo " /5 </p>
+			              <p>ReviewID: $reviewinfo[0]</p>
 			              <input id=\"review_id\" name=\"review_id\" value=\"$reviewinfo[0]\" hidden></input> 
 			              <input id=\"user_id\"name=\"user_id\" value=\"$reviewinfo[7]\" hidden></input>
 			            </div>
@@ -127,7 +128,21 @@ $_SESSION['account_id'] = $userid;
 		    }
 		   ?>
     </div>
-    </div>
+   		<form action ="../Database/delete_review.php" method='POST'>
+   		<div class="row">
+   			<div class="col s12">
+	          <div class="card blue-grey">
+	            <div class="card-content right-align white-text">
+	            <div class="input-field col l8 s12">
+			          <input placeholder="To delete a review, enter the ReviewID here" name="reviewid" id="reviewid" type="text" class="validate">
+			          <label for="reviewid" class="white-text">ReviewID</label>
+			    </div>
+	            	<button type="submit" class="waves-effect waves-light blue-grey darken-3 btn-large"><i class="material-icons left">delete</i>Delete Review</button>
+	            </div>
+	          </div>
+	        </div>
+   		</div>
+		</form>
     </main>
     <script type="text/javascript" src="../Scripts/Minified-Scripts/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../Scripts/Minified-Scripts/materialize.min.js"></script>

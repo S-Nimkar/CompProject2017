@@ -49,27 +49,27 @@ mysqli_select_db($dbc, $db_name) or die("cannot select DB");
 	            </div>
 	            <div class="card-content white-text">
 		           <form name="review" onsubmit="return validateForm()" action="../Database/submit_review.php" method='POST'>
-			           <div class="input-field col s6">
+			           <div class="input-field">
 				          <input id="address1" name="address1" type="text" class="validate">
 				          <label for="address1" class="white-text">Address1</label>
 				        </div>
-				        <div class="input-field col s6">
+				        <div class="input-field">
 				          <input id="address2" name="address2" type="text" class="validate">
 				          <label for="address2" class="white-text">Address2 (Optional)</label>
 				        </div>
-				        <div class="input-field col s6">
+				        <div class="input-field">
 				          <input id="city" name="city" type="text" class="validate">
 				          <label for="city" class="white-text">City</label>
 				        </div>
-				        <div class="input-field col s6">
+				        <div class="input-field">
 				          <input id="region" name="region" type="text" class="validate">
 				          <label for="region" class="white-text">Region</label>
 				        </div>
-				        <div class="input-field col s6">
+				        <div class="input-field">
 				          <input id="postcode" name="postcode" type="text" class="validate">
 				          <label for="postcode" class="white-text">Postcode</label>
 				        </div>
-				        <div class="input-field col s6">
+				        <div class="input-field">
 				          <textarea id="review-body" name="review-body" class="materialize-textarea"></textarea>
           				  <label for="review-body" class="white-text">Review Body</label>
 				        </div>
