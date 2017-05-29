@@ -4,7 +4,6 @@ $host="localhost"; // Host name
 $username="root"; // Mysql username
 $passsword="root"; // Mysql password
 $db_name="StudentReviews"; // Database name
-$tbl_name="Review";
 // Connect to server and select databsae.
 $dbc = mysqli_connect("$host", "$username", "$passsword")or die("cannot connect");
 mysqli_select_db($dbc, $db_name) or die("cannot select DB");
