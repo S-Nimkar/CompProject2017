@@ -82,6 +82,6 @@ mysqli_select_db($dbc, $db_name) or die("cannot select DB");
     </main>
     <script type="text/javascript" src="../Scripts/Minified-Scripts/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../Scripts/Minified-Scripts/materialize.min.js"></script>
-    <script type="text/javascript" src="../Scripts/create_review.js"></script>
+    <script type="text/javascript" src="../Scripts/view_review.js"></script>
 </body>
 </html>

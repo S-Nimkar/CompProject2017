@@ -1,6 +1,4 @@
-$(document).ready(function() {
-    $('select').material_select();
-  });
+
 function logincheck() {
 	var selectusername = document.forms["test"]["user_name"].value;
 	var selectpass = document.forms["test"]["pass_word"].value;
