@@ -7,7 +7,6 @@ $db_name="StudentReviews"; // Database name
 // Connect to server and select databsae.
 $dbc = mysqli_connect("$host", "$username", "$passsword")or die("cannot connect");
 mysqli_select_db($dbc, $db_name) or die("cannot select DB");
-$userid = $_SESSION['account'][2];
 
 ?>
 <!DOCTYPE html>
@@ -43,6 +42,42 @@ $userid = $_SESSION['account'][2];
     </header>
     <main>
     <div class="container">
+    	<div class="col s12">
+	        <div class="card blue darken-3">
+	            <div class="card-content white-text">
+	              <p style="font-size: 3rem;">New Review Form</p>
+	            </div>
+	            <div class="card-content white-text">
+		           <form name="review" onsubmit="return validateForm()" action="../Database/submit_review.php" method='POST'>
+			           <div class="input-field col s6">
+				          <input id="address1" name="address1" type="text" class="validate">
+				          <label for="address1" class="white-text">Address1</label>
+				        </div>
+				        <div class="input-field col s6">
+				          <input id="address2" name="address2" type="text" class="validate">
+				          <label for="address2" class="white-text">Address2 (Optional)</label>
+				        </div>
+				        <div class="input-field col s6">
+				          <input id="city" name="city" type="text" class="validate">
+				          <label for="city" class="white-text">City</label>
+				        </div>
+				        <div class="input-field col s6">
+				          <input id="region" name="region" type="text" class="validate">
+				          <label for="region" class="white-text">Region</label>
+				        </div>
+				        <div class="input-field col s6">
+				          <input id="postcode" name="postcode" type="text" class="validate">
+				          <label for="postcode" class="white-text">Postcode</label>
+				        </div>
+				        <div class="input-field col s6">
+				          <textarea id="review-body" name="review-body" class="materialize-textarea"></textarea>
+          				  <label for="review-body" class="white-text">Review Body</label>
+				        </div>
+				        <button class="waves-effect waves-light btn-large button-center blue" type="submit">Submit Review</button>
+	          		</form>
+	            </div>
+	        </div>
+	    </div>
     </div>
     </main>
     <script type="text/javascript" src="../Scripts/Minified-Scripts/jquery-3.2.1.min.js"></script>

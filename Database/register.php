@@ -30,8 +30,8 @@ if (mysqli_num_rows($checked_username) == 0){
    //add registration success page
    header('Location: ../Views/homepage.php');
 }else {
-	
-   header('Location: ../Views/error.html');
+
+   header('Location: ../Views/registration-error.html');
 }
 
 

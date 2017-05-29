@@ -14,7 +14,7 @@ $user = mysqli_fetch_row($userdetails);
 $get_user_review_SQL = "SELECT ReviewID, Address1, PostCode, City, Region, Date, Time,UserID FROM Review WHERE UserID = $userid ORDER BY Date,Time";
 $review_dataset = mysqli_query($dbc,$get_user_review_SQL);
 $number_of_reviews = mysqli_num_rows($review_dataset);
-
+$_SESSION['account_id'] = $userid;
 ?>
 <!DOCTYPE html>
 <html>

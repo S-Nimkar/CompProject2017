@@ -32,10 +32,5 @@ $_SESSION['account'][0] = '1';
 $_SESSION['account'][1] = $username;
 $_SESSION['account'][2] = $dbase_user_info[2];
 header('Location: ../Views/homepage.php');
-} else {
-	header('Location: ../Views/error.html');
-}
-
-
-
+} else header('Location: ../Views/login-error.html');
 ?>
