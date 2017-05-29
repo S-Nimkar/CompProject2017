@@ -12,7 +12,6 @@ mysqli_select_db($dbc, $db_name) or die("cannot select DB");
 $reviewid = $_POST['reviewid'];
 $userid = $_SESSION['account'][2];
 $delete_review_SQL = "DELETE FROM Review WHERE UserID = $userid AND ReviewID = $reviewid";
-$delete_comments_SQL = "DELETE FROM Comment WHERE ReviewID = $reviewid";
 
 $result = mysqli_query($dbc, $delete_review_SQL);
 
