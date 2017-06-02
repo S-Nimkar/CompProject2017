@@ -7,15 +7,9 @@ $db_name="StudentReviews"; // Database name
 // Connect to server and select databsae.
 $dbc = mysqli_connect("$host", "$username", "$passsword")or die("cannot connect");
 mysqli_select_db($dbc, $db_name) or die("cannot select DB");
-if ($_SESSION['comment'] == 'true' or $_SESSION['rating'] == 'true') {
-	$reviewid = $_SESSION['form_info'][0];
-	$user_id = $_SESSION['form_info'][1];
-} else {
-$reviewid = $_POST['review_id'];
-$user_id = $_POST['user_id'];
-}
-$_SESSION['form_info'][0] = $reviewid;
-$_SESSION['form_info'][1] = $user_id;
+$reviewid = $_GET['review_id'];
+$user_id = $_GET['user_id'];
+$_SESSION['current_location'] = $_SERVER['REQUEST_URI'];
 $_SESSION['comment'] = 'false';
 $_SESSION['rating'] = 'false';
 $GetReviewData_Sql = "SELECT * FROM Review WHERE UserID = $user_id AND ReviewID = $reviewid";
@@ -52,7 +46,7 @@ $number_of_comments = mysqli_num_rows($CommentsDataSet);
     <header>
 		<nav>
 		  <div class="nav-wrapper base-colour">
-		    <a href="homepage.php" class="logo-title left homepage-logo">StudentReviews</a>
+		    <a href="homepage.php" class="logo-title left homepage-logo">Rate</a>
 		    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		      <ul class="right hide-on-med-and-down">
 		      	<?php if ($_SESSION['account'][0] == '1'){
@@ -143,6 +137,8 @@ $number_of_comments = mysqli_num_rows($CommentsDataSet);
 				      <label class="white-text" for="test5">5</label>
 				      &nbsp
 				      &nbsp
+              <input id=\"review_id\" name=\"review_id\" value="<?php echo"$reviewid" ?>" hidden></input> 
+              <input id=\"user_id\"name=\"user_id\" value="<?php echo"$user_id" ?>" hidden></input>
 				      <button class="waves-effect waves-light btn blue darken-3" type="submit"> Rate</button>
 				     </p>
 				  </form>
@@ -195,6 +191,8 @@ $number_of_comments = mysqli_num_rows($CommentsDataSet);
 		          <label for=\"user_comment\">New Comment:</label>
 		        </div>
 		        <button class=\"waves-effect waves-light btn blue darken-3 col s6 offset-s3 l1\" type=\"submit\" style=\"margin-top: 25px; \"> Submit</button>
+            <input id=\"review_id\" name=\"review_id\" value=\"$reviewid\" hidden></input> 
+            <input id=\"user_id\"name=\"user_id\" value=\"$user_id\" hidden></input>
 		      </div>
 		    </form>
 		  </div>";

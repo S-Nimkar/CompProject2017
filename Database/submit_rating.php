@@ -7,9 +7,8 @@ $db_name="StudentReviews"; // Database name
 // Connect to server and select databsae.
 $dbc = mysqli_connect("$host", "$username", "$passsword")or die("cannot connect");
 mysqli_select_db($dbc, $db_name) or die("cannot select DB");
-$userid = $_SESSION['account'][2];
-$reviewid = $_SESSION['form_info'][0];
-$_SESSION['rating'] = 'true';
+$userid = $_POST['user_id'];
+$reviewid = $_POST['reviewid'];
 if (isset($_SESSION['account'][2])) {
 	$selected_radio = $_POST['group1'];
 	$check_if_rating_exist_SQL = "SELECT Rating FROM Rating WHERE UserID = $userid AND ReviewID = $reviewid";
@@ -21,6 +20,6 @@ if (isset($_SESSION['account'][2])) {
 		$insert_new_rating_SQL = "INSERT INTO Rating (UserID,ReviewID,Rating) VALUES ('$userid','$reviewid','$selected_radio')";
 		mysqli_query($dbc,$insert_new_rating_SQL);
 	}
-	header('Location: ../Views/view_review.php');
+	header('Location: '.$_SESSION['current_location']);
 } else header('Location: ../Views/error.html');
 ?>
