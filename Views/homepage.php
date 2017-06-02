@@ -24,7 +24,7 @@ mysqli_select_db($dbc, $db_name) or die("cannot select DB");
     <header>
 		<nav>
 		  <div class="nav-wrapper base-colour">
-		    <a href="homepage.php" class="logo-title left homepage-logo">Rate</a>
+		    <a href="homepage.php" class="logo-title left homepage-logo">StudentReviews</a>
 		    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		      <ul class="right hide-on-med-and-down">
 		      	<?php if ($_SESSION['account'][0] == '1'){
@@ -74,7 +74,7 @@ mysqli_select_db($dbc, $db_name) or die("cannot select DB");
         echo "
         	<div class=\"col s12 m6 l3\">
 	          <div class=\"card darken-1 lighter-colour\">
-	          <form action=\"view_review.php\" method='GET'>
+	          <form action=\"view_review.php\" method='POST'>
 	            <div class=\"card-content left-allign white\">
 	              <span style=\"font-size: 2rem; font-weight: 300;\">$reviewinfo[2]</span>
 	              <p>$reviewinfo[4]</p>

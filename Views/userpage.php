@@ -28,7 +28,7 @@ $_SESSION['account_id'] = $userid;
     <header>
 		<nav>
 		  <div class="nav-wrapper base-colour">
-		    <a href="homepage.php" class="logo-title left homepage-logo">Rate</a>
+		    <a href="homepage.php" class="logo-title left homepage-logo">StudentReviews</a>
 		    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		      <ul class="right hide-on-med-and-down">
 		      	<?php
